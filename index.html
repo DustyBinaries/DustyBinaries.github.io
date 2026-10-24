@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DustyBinaries</title>
+<meta name="description" content="Old compilers, real software. Delphi 7, Pelles C and Digital Mars can still build useful, beautiful stuff.">
+<link rel="icon" href="avatar.png">
+<style>
+  :root {
+    --sand: #e6c9a0;
+    --sand-light: #f1dcbb;
+    --paper: #f7ead0;
+    --navy: #3b4a6b;
+    --navy-dark: #27324b;
+    --brown: #8a5a2b;
+    --ink: #3a2c1c;
+    --green: #4f7a68;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --sand: #231d17;
+      --sand-light: #2d251d;
+      --paper: #342b21;
+      --navy: #9fb2d9;
+      --navy-dark: #c4d1ee;
+      --brown: #d19a5c;
+      --ink: #eadcc4;
+      --green: #8fc3ac;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--sand);
+    color: var(--ink);
+    font-family: "Courier New", Consolas, monospace;
+    line-height: 1.55;
+  }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 0 16px; }
+  header { text-align: center; padding: 56px 0 32px; }
+  header img {
+    width: 160px; height: 160px;
+    image-rendering: pixelated;
+    border: 4px solid var(--navy);
+    box-shadow: 6px 6px 0 var(--brown);
+    background: var(--sand-light);
+  }
+  h1 { margin: 24px 0 4px; font-size: 2.4rem; color: var(--navy-dark); letter-spacing: 1px; }
+  .tag { margin: 0; color: var(--brown); font-weight: bold; }
+  .intro { max-width: 640px; margin: 24px auto 0; }
+  h2 { color: var(--navy-dark); border-bottom: 3px dashed var(--brown); padding-bottom: 6px; margin-top: 48px; }
+  .grid { display: grid; gap: 20px; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); margin-top: 24px; }
+  .card {
+    display: block;
+    background: var(--paper);
+    border: 3px solid var(--navy);
+    box-shadow: 5px 5px 0 var(--brown);
+    padding: 16px;
+    color: inherit;
+    text-decoration: none;
+    position: relative;
+  }
+  a.card:hover, a.card:focus-visible { transform: translate(-2px, -2px); box-shadow: 7px 7px 0 var(--brown); outline: none; }
+  .card h3 { margin: 0 0 6px; color: var(--navy-dark); }
+  .card h3::before { content: "\25A0 "; color: var(--green); }
+  .card p { margin: 0; font-size: .92rem; }
+  .card .lang { display: block; margin-top: 10px; font-size: .8rem; color: var(--brown); }
+  .principles { padding-left: 20px; }
+  .principles li { margin: 8px 0; }
+  footer { text-align: center; padding: 48px 0; font-size: .85rem; color: var(--brown); }
+  footer a { color: var(--navy-dark); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <img src="avatar.png" alt="A dusty pixel-art floppy disk with a broom">
+    <h1>DustyBinaries</h1>
+    <p class="tag">Old compilers. Real software.</p>
+    <p class="intro">
+      We want to show that old technologies like <strong>Delphi 7</strong>, <strong>Pelles C</strong>
+      and the <strong>Digital Mars</strong> compilers can still build useful, even beautiful, software.
+      Native binaries, no heavy runtimes, a little dust on top.
+    </p>
+  </header>
+
+  <main>
+    <h2>Projects</h2>
+    <div class="grid">
+      <a class="card" href="https://github.com/DustyBinaries/Borion">
+        <h3>Borion</h3>
+        <p>A Tauri-style native application engine for Delphi 7: HTML/CSS/JS interfaces on WebView2, native logic in Delphi.</p>
+        <span class="lang">Delphi 7</span>
+      </a>
+      <a class="card" href="https://github.com/DustyBinaries/WebView2">
+        <h3>WebView2</h3>
+        <p>The <code>TWebView2Browser</code> control for Delphi 7, the foundation of Borion. It also works standalone.</p>
+        <span class="lang">Delphi 7</span>
+      </a>
+      <a class="card" href="https://github.com/DustyBinaries/fbstats">
+        <h3>fbstats</h3>
+        <p>Firebird size statistics: page census, BLOB measurement and duplication analysis behind a web UI.</p>
+        <span class="lang">Delphi 7 + Borion</span>
+      </a>
+      <a class="card" href="https://github.com/DustyBinaries/fsql">
+        <h3>fsql</h3>
+        <p>A Firebird command-line shell modelled on the sqlite3 CLI. Replaces <code>isql</code> for day-to-day work.</p>
+        <span class="lang">Delphi 7 + Zeos</span>
+      </a>
+      <div class="card">
+        <h3>tdb</h3>
+        <p>A gdb/pdb-style command-line debugger for Delphi 7 programs, hosting Borland's own debug kernel through COM.</p>
+        <span class="lang">Delphi 7</span>
+      </div>
+      <a class="card" href="https://github.com/DustyBinaries/UReadLine">
+        <h3>UReadLine</h3>
+        <p>A minimal GNU-readline-like line editor for the Windows console, with history, completion and Emacs keys.</p>
+        <span class="lang">Delphi 7</span>
+      </a>
+    </div>
+
+    <h2>Principles</h2>
+    <ul class="principles">
+      <li><strong>Old toolchains, current results.</strong> Every project is built with a vintage compiler.</li>
+      <li><strong>Native and lightweight.</strong> Small executables, quick startup.</li>
+      <li><strong>Useful first, nostalgic second.</strong> The tools solve real problems today.</li>
+      <li><strong>Modern where it counts.</strong> Web UIs, sqlite3-style CLIs and gdb-style debugging.</li>
+    </ul>
+  </main>
+
+  <footer>
+    <a href="https://github.com/DustyBinaries">github.com/DustyBinaries</a>
+  </footer>
+</div>
+</body>
+</html>
